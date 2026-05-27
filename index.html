@@ -1,55 +1,288 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlindBox</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlindBox</title>
+  <style>
+    * { box-sizing: border-box; }
 
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #ffffff;
-            color: #111111;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 80px 24px;
-            line-height: 1.7;
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      color: #f7f8fa;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0, 173, 181, 0.22), transparent 32%),
+        radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.12), transparent 28%),
+        linear-gradient(135deg, #111827 0%, #1f2937 48%, #0f172a 100%);
+      overflow-x: hidden;
+    }
 
-        h1 {
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 24px 56px;
+    }
 
-        p {
-            color: #666666;
-            margin-bottom: 32px;
-        }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 88px;
+    }
 
-        a {
-            display: block;
-            margin-bottom: 16px;
-            color: #007AFF;
-            text-decoration: none;
-            font-size: 18px;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(145deg, #00adb5, #73f7ff);
+      box-shadow: 0 12px 30px rgba(0, 173, 181, 0.35);
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 15px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #73f7ff;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+      margin: 0 0 24px;
+    }
+
+    .subtitle {
+      max-width: 560px;
+      color: rgba(255,255,255,0.72);
+      font-size: 21px;
+      line-height: 1.55;
+      margin-bottom: 36px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .primary {
+      color: #071317;
+      background: #73f7ff;
+      box-shadow: 0 16px 34px rgba(0, 173, 181, 0.28);
+    }
+
+    .secondary {
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(20px);
+    }
+
+    .stack {
+      position: relative;
+      height: 460px;
+    }
+
+    .photo-card {
+      position: absolute;
+      width: 280px;
+      height: 380px;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      backdrop-filter: blur(24px);
+    }
+
+    .card-1 {
+      right: 80px;
+      top: 30px;
+      transform: rotate(-10deg);
+      background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+    }
+
+    .card-2 {
+      right: 28px;
+      top: 58px;
+      transform: rotate(8deg);
+      background: linear-gradient(145deg, rgba(0,173,181,0.35), rgba(255,255,255,0.08));
+    }
+
+    .card-3 {
+      right: 58px;
+      top: 88px;
+      transform: rotate(-1deg);
+      overflow: hidden;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.46)),
+        radial-gradient(circle at 30% 20%, #73f7ff, transparent 28%),
+        radial-gradient(circle at 70% 72%, #00adb5, transparent 32%),
+        linear-gradient(145deg, #22313f, #111827);
+    }
+
+    .card-content {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      color: rgba(255,255,255,0.9);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 96px;
+    }
+
+    .feature {
+      padding: 24px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(18px);
+    }
+
+    .feature h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 72px;
+      color: rgba(255,255,255,0.45);
+      font-size: 14px;
+    }
+
+    @media (max-width: 820px) {
+      nav { margin-bottom: 52px; }
+      .hero { grid-template-columns: 1fr; }
+      .stack { height: 360px; }
+      .photo-card { width: 220px; height: 300px; }
+      .features { grid-template-columns: 1fr; margin-top: 48px; }
+      .nav-links a { margin-left: 14px; }
+    }
+  </style>
 </head>
 <body>
+  <main class="page">
+    <nav>
+      <div class="brand">
+        <div class="icon"></div>
+        <span>BlindBox</span>
+      </div>
+      <div class="nav-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </nav>
 
-<h1>BlindBox</h1>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Random Photo Organizer</div>
+        <h1>Rediscover your memories.</h1>
+        <p class="subtitle">
+          BlindBox turns photo cleanup into a calm, card-like experience.
+          Open random moments, keep what matters, and review before deleting.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="support.html">Get Support</a>
+          <a class="button secondary" href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
 
-<p>
-Rediscover your memories through random photos.
-</p>
+      <div class="stack" aria-hidden="true">
+        <div class="photo-card card-1"></div>
+        <div class="photo-card card-2"></div>
+        <div class="photo-card card-3">
+          <div class="card-content">
+            <div class="badge">Next Memory</div>
+            <div class="card-title">You never know what comes next.</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<a href="support.html">Support</a>
-<a href="privacy.html">Privacy Policy</a>
+    <section class="features">
+      <div class="feature">
+        <h3>Random by design</h3>
+        <p>Explore forgotten photos without endlessly scrolling through your library.</p>
+      </div>
+      <div class="feature">
+        <h3>Local first</h3>
+        <p>Your photos are processed on your device and are not uploaded to a server.</p>
+      </div>
+      <div class="feature">
+        <h3>Simple cleanup</h3>
+        <p>Mark photos for deletion, review your choices, then delete with confidence.</p>
+      </div>
+    </section>
 
+    <footer>
+      © 2026 BlindBox. Developed independently.
+    </footer>
+  </main>
 </body>
 </html>
