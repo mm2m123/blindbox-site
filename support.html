@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlindBox Support</title>
+  <link rel="icon" type="image/png" href="blindboxicon.png" />
   <style>
     * { box-sizing: border-box; }
 
@@ -11,10 +12,11 @@
       margin: 0;
       min-height: 100vh;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-      color: #f7f8fa;
+      color: #26233a;
       background:
-        radial-gradient(circle at 15% 15%, rgba(0, 173, 181, 0.2), transparent 30%),
-        linear-gradient(135deg, #111827 0%, #1f2937 48%, #0f172a 100%);
+        radial-gradient(circle at 16% 10%, rgba(106, 167, 255, 0.3), transparent 26%),
+        radial-gradient(circle at 84% 14%, rgba(255, 119, 181, 0.24), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #fbf8ff 48%, #f6f8ff 100%);
     }
 
     .page {
@@ -34,37 +36,39 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: #fff;
+      color: #26233a;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: -0.03em;
     }
 
     .icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: linear-gradient(145deg, #00adb5, #73f7ff);
-      box-shadow: 0 12px 30px rgba(0, 173, 181, 0.35);
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 12px 28px rgba(133, 117, 255, 0.22);
     }
 
     nav a {
-      color: rgba(255,255,255,0.72);
+      color: rgba(38, 35, 58, 0.62);
       text-decoration: none;
       margin-left: 22px;
       font-size: 15px;
+      font-weight: 600;
     }
 
     .panel {
       padding: clamp(28px, 5vw, 54px);
       border-radius: 36px;
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.32);
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(255,255,255,0.95);
+      box-shadow: 0 28px 70px rgba(126, 108, 255, 0.14);
       backdrop-filter: blur(24px);
     }
 
     .eyebrow {
-      color: #73f7ff;
+      color: #8b5cf6;
       font-weight: 800;
       font-size: 13px;
       letter-spacing: 0.08em;
@@ -77,10 +81,13 @@
       line-height: 1;
       letter-spacing: -0.06em;
       margin: 0 0 22px;
+      background: linear-gradient(135deg, #3b3a6d, #8b5cf6 45%, #ff6aa8);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
     .lead {
-      color: rgba(255,255,255,0.72);
+      color: rgba(38, 35, 58, 0.66);
       font-size: 20px;
       line-height: 1.6;
       max-width: 640px;
@@ -90,8 +97,8 @@
     .card {
       padding: 24px;
       border-radius: 26px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.58));
+      border: 1px solid rgba(255,255,255,0.92);
       margin-top: 18px;
     }
 
@@ -102,7 +109,7 @@
     }
 
     p {
-      color: rgba(255,255,255,0.66);
+      color: rgba(38, 35, 58, 0.64);
       line-height: 1.7;
       margin: 0;
     }
@@ -112,22 +119,23 @@
       margin-top: 16px;
       padding: 13px 18px;
       border-radius: 999px;
-      color: #071317;
-      background: #73f7ff;
+      color: white;
+      background: linear-gradient(135deg, #7c8cff, #b56cff, #ff72a8);
       text-decoration: none;
       font-weight: 800;
+      box-shadow: 0 16px 34px rgba(139, 92, 246, 0.22);
     }
 
     ul {
       margin: 12px 0 0;
       padding-left: 20px;
-      color: rgba(255,255,255,0.66);
+      color: rgba(38, 35, 58, 0.64);
       line-height: 1.8;
     }
 
     footer {
       margin-top: 34px;
-      color: rgba(255,255,255,0.42);
+      color: rgba(38, 35, 58, 0.42);
       font-size: 14px;
       text-align: center;
     }
@@ -142,7 +150,7 @@
   <main class="page">
     <nav>
       <a class="brand" href="index.html">
-        <div class="icon"></div>
+        <img class="icon" src="blindboxicon.png" alt="BlindBox Icon" />
         <span>BlindBox</span>
       </a>
       <div>
@@ -188,9 +196,7 @@
       </div>
     </section>
 
-    <footer>
-      © 2026 BlindBox. Developed independently.
-    </footer>
+    <footer>© 2026 BlindBox. Developed independently.</footer>
   </main>
 </body>
 </html>
