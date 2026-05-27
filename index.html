@@ -5,212 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlindBox</title>
   <link rel="icon" type="image/png" href="blindboxicon.png" />
-  <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-      color: #26233a;
-      background:
-        radial-gradient(circle at 16% 12%, rgba(106, 167, 255, 0.32), transparent 26%),
-        radial-gradient(circle at 82% 18%, rgba(255, 119, 181, 0.24), transparent 28%),
-        radial-gradient(circle at 52% 78%, rgba(173, 119, 255, 0.22), transparent 30%),
-        linear-gradient(180deg, #ffffff 0%, #fbf8ff 48%, #f6f8ff 100%);
-      overflow-x: hidden;
-    }
-
-    .page {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 32px 24px 56px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 82px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #26233a;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 12px 28px rgba(133, 117, 255, 0.22);
-    }
-
-    .nav-links a {
-      color: rgba(38, 35, 58, 0.62);
-      text-decoration: none;
-      margin-left: 24px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 56px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      color: #8b5cf6;
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(48px, 7vw, 82px);
-      line-height: 0.98;
-      letter-spacing: -0.07em;
-      margin: 0 0 24px;
-      background: linear-gradient(135deg, #3b3a6d, #8b5cf6 45%, #ff6aa8);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .subtitle {
-      max-width: 560px;
-      color: rgba(38, 35, 58, 0.66);
-      font-size: 21px;
-      line-height: 1.58;
-      margin-bottom: 36px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      padding: 0 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 15px;
-    }
-
-    .primary {
-      color: white;
-      background: linear-gradient(135deg, #7c8cff, #b56cff, #ff72a8);
-      box-shadow: 0 18px 36px rgba(139, 92, 246, 0.24);
-    }
-
-    .secondary {
-      color: #5f55a5;
-      background: rgba(255,255,255,0.68);
-      border: 1px solid rgba(255,255,255,0.9);
-      backdrop-filter: blur(22px);
-      box-shadow: 0 14px 34px rgba(126, 108, 255, 0.12);
-    }
-
-    .visual {
-      position: relative;
-      height: 460px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .icon-large {
-      width: 320px;
-      height: 320px;
-      border-radius: 70px;
-      object-fit: cover;
-      box-shadow:
-        0 34px 80px rgba(133, 117, 255, 0.24),
-        0 12px 32px rgba(255, 114, 168, 0.18);
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(1px);
-      opacity: 0.9;
-    }
-
-    .orb.one {
-      width: 72px;
-      height: 72px;
-      top: 46px;
-      left: 70px;
-      background: linear-gradient(135deg, #68a4ff, #c06cff);
-    }
-
-    .orb.two {
-      width: 54px;
-      height: 54px;
-      right: 82px;
-      bottom: 66px;
-      background: linear-gradient(135deg, #ff6aa8, #ffd28b);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 88px;
-    }
-
-    .feature {
-      padding: 24px;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.66);
-      border: 1px solid rgba(255,255,255,0.92);
-      box-shadow: 0 22px 50px rgba(126, 108, 255, 0.12);
-      backdrop-filter: blur(22px);
-    }
-
-    .feature h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      letter-spacing: -0.03em;
-    }
-
-    .feature p {
-      margin: 0;
-      color: rgba(38, 35, 58, 0.58);
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    footer {
-      margin-top: 72px;
-      color: rgba(38, 35, 58, 0.42);
-      font-size: 14px;
-    }
-
-    @media (max-width: 820px) {
-      nav { margin-bottom: 52px; }
-      .hero { grid-template-columns: 1fr; }
-      .visual { height: 360px; }
-      .icon-large { width: 260px; height: 260px; border-radius: 56px; }
-      .features { grid-template-columns: 1fr; margin-top: 48px; }
-      .nav-links a { margin-left: 14px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="page">
@@ -222,6 +17,7 @@
       <div class="nav-links">
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
+        <a class="lang" href="zh/index.html">中文</a>
       </div>
     </nav>
 
@@ -229,7 +25,7 @@
       <div>
         <div class="eyebrow">Random Photo Organizer</div>
         <h1>Rediscover your memories.</h1>
-        <p class="subtitle">
+        <p class="lead">
           BlindBox helps you clean up your photo library through a calm, random, card-like experience.
           Every photo feels like opening a small box of memories.
         </p>
@@ -239,23 +35,21 @@
         </div>
       </div>
 
-      <div class="visual" aria-hidden="true">
-        <div class="orb one"></div>
-        <img class="icon-large" src="blindboxicon.png" alt="" />
-        <div class="orb two"></div>
+      <div class="visual">
+        <img class="icon-large" src="blindboxicon.png" alt="BlindBox App Icon" />
       </div>
     </section>
 
-    <section class="features">
-      <div class="feature">
+    <section class="cards">
+      <div class="card">
         <h3>Random by design</h3>
         <p>Open forgotten photos without endlessly scrolling through your entire library.</p>
       </div>
-      <div class="feature">
+      <div class="card">
         <h3>Local first</h3>
         <p>Your photos stay on your device and are not uploaded to any server.</p>
       </div>
-      <div class="feature">
+      <div class="card">
         <h3>Review before deleting</h3>
         <p>Mark photos for deletion first, then confirm your choices with confidence.</p>
       </div>

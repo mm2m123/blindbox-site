@@ -5,146 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlindBox Support</title>
   <link rel="icon" type="image/png" href="blindboxicon.png" />
-  <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-      color: #26233a;
-      background:
-        radial-gradient(circle at 16% 10%, rgba(106, 167, 255, 0.3), transparent 26%),
-        radial-gradient(circle at 84% 14%, rgba(255, 119, 181, 0.24), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, #fbf8ff 48%, #f6f8ff 100%);
-    }
-
-    .page {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 32px 24px 64px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 72px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #26233a;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 12px 28px rgba(133, 117, 255, 0.22);
-    }
-
-    nav a {
-      color: rgba(38, 35, 58, 0.62);
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .panel {
-      padding: clamp(28px, 5vw, 54px);
-      border-radius: 36px;
-      background: rgba(255,255,255,0.68);
-      border: 1px solid rgba(255,255,255,0.95);
-      box-shadow: 0 28px 70px rgba(126, 108, 255, 0.14);
-      backdrop-filter: blur(24px);
-    }
-
-    .eyebrow {
-      color: #8b5cf6;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: clamp(42px, 7vw, 68px);
-      line-height: 1;
-      letter-spacing: -0.06em;
-      margin: 0 0 22px;
-      background: linear-gradient(135deg, #3b3a6d, #8b5cf6 45%, #ff6aa8);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .lead {
-      color: rgba(38, 35, 58, 0.66);
-      font-size: 20px;
-      line-height: 1.6;
-      max-width: 640px;
-      margin-bottom: 34px;
-    }
-
-    .card {
-      padding: 24px;
-      border-radius: 26px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.58));
-      border: 1px solid rgba(255,255,255,0.92);
-      margin-top: 18px;
-    }
-
-    h2 {
-      margin: 0 0 10px;
-      font-size: 21px;
-      letter-spacing: -0.03em;
-    }
-
-    p {
-      color: rgba(38, 35, 58, 0.64);
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    a.mail {
-      display: inline-flex;
-      margin-top: 16px;
-      padding: 13px 18px;
-      border-radius: 999px;
-      color: white;
-      background: linear-gradient(135deg, #7c8cff, #b56cff, #ff72a8);
-      text-decoration: none;
-      font-weight: 800;
-      box-shadow: 0 16px 34px rgba(139, 92, 246, 0.22);
-    }
-
-    ul {
-      margin: 12px 0 0;
-      padding-left: 20px;
-      color: rgba(38, 35, 58, 0.64);
-      line-height: 1.8;
-    }
-
-    footer {
-      margin-top: 34px;
-      color: rgba(38, 35, 58, 0.42);
-      font-size: 14px;
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      nav { margin-bottom: 46px; }
-      nav a { margin-left: 14px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="page">
@@ -153,9 +14,10 @@
         <img class="icon" src="blindboxicon.png" alt="BlindBox Icon" />
         <span>BlindBox</span>
       </a>
-      <div>
+      <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="privacy.html">Privacy</a>
+        <a class="lang" href="zh/support.html">中文</a>
       </div>
     </nav>
 
@@ -169,9 +31,7 @@
 
       <div class="card">
         <h2>Contact</h2>
-        <p>
-          For support, feature requests, or general feedback, send an email to:
-        </p>
+        <p>For support, feature requests, or general feedback, send an email to:</p>
         <a class="mail" href="mailto:mm2m123@icloud.com">mm2m123@icloud.com</a>
       </div>
 
@@ -184,15 +44,6 @@
           <li>A short description of what happened</li>
           <li>Optional screenshots or screen recordings</li>
         </ul>
-      </div>
-
-      <div class="card">
-        <h2>About BlindBox</h2>
-        <p>
-          BlindBox is an independent iPhone app for organizing photos through
-          a random, card-based cleanup experience. It is designed to stay simple,
-          private, and focused on your memories.
-        </p>
       </div>
     </section>
 
