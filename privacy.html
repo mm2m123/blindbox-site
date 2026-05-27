@@ -1,84 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlindBox Privacy Policy</title>
+  <style>
+    * { box-sizing: border-box; }
 
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #ffffff;
-            color: #111111;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 80px 24px;
-            line-height: 1.8;
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      color: #f7f8fa;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(0, 173, 181, 0.2), transparent 30%),
+        radial-gradient(circle at 88% 8%, rgba(255, 255, 255, 0.1), transparent 26%),
+        linear-gradient(135deg, #111827 0%, #1f2937 48%, #0f172a 100%);
+    }
 
-        h1 {
-            font-size: 36px;
-            margin-bottom: 32px;
-        }
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
 
-        h2 {
-            margin-top: 40px;
-            font-size: 24px;
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 72px;
+    }
 
-        p {
-            color: #666666;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
 
-        a {
-            color: #007AFF;
-            text-decoration: none;
-        }
-    </style>
+    .icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(145deg, #00adb5, #73f7ff);
+      box-shadow: 0 12px 30px rgba(0, 173, 181, 0.35);
+    }
+
+    nav a {
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 15px;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      color: #73f7ff;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 68px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin: 0 0 18px;
+    }
+
+    .lead {
+      color: rgba(255,255,255,0.72);
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .content {
+      padding: clamp(24px, 5vw, 46px);
+      border-radius: 36px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.32);
+      backdrop-filter: blur(24px);
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .summary-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.11);
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .summary-card span {
+      color: rgba(255,255,255,0.62);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    section {
+      padding-top: 26px;
+      margin-top: 26px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      color: rgba(255,255,255,0.66);
+      line-height: 1.8;
+      margin: 0 0 14px;
+    }
+
+    a {
+      color: #73f7ff;
+      text-decoration: none;
+    }
+
+    .updated {
+      margin-top: 28px;
+      color: rgba(255,255,255,0.46);
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 34px;
+      color: rgba(255,255,255,0.42);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      nav { margin-bottom: 46px; }
+      nav a { margin-left: 14px; }
+      .summary { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
+  <main class="page">
+    <nav>
+      <a class="brand" href="index.html">
+        <div class="icon"></div>
+        <span>BlindBox</span>
+      </a>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+      </div>
+    </nav>
 
-<h1>Privacy Policy</h1>
+    <div class="hero">
+      <div class="eyebrow">Privacy Policy</div>
+      <h1>Your photos stay yours.</h1>
+      <p class="lead">
+        BlindBox is designed with a local-first approach. Your photo library is accessed only
+        with your permission and processed on your device.
+      </p>
+    </div>
 
-<p>
-BlindBox respects your privacy.
-</p>
+    <article class="content">
+      <div class="summary">
+        <div class="summary-card">
+          <strong>No Uploads</strong>
+          <span>Your photos are not uploaded to any server.</span>
+        </div>
+        <div class="summary-card">
+          <strong>No Tracking</strong>
+          <span>BlindBox does not use advertising or tracking SDKs.</span>
+        </div>
+        <div class="summary-card">
+          <strong>Local First</strong>
+          <span>Photo organization happens on your device.</span>
+        </div>
+      </div>
 
-<h2>Photos Access</h2>
+      <section>
+        <h2>Photos Access</h2>
+        <p>
+          BlindBox requests access to your photo library only so the app can display and help
+          you organize photos selected through Apple's Photos permission system.
+        </p>
+        <p>
+          Photos are processed locally on your device. BlindBox does not upload, store, sell,
+          or share your photos.
+        </p>
+      </section>
 
-<p>
-BlindBox only accesses photos that you explicitly allow through Apple's Photos permission system.
-</p>
+      <section>
+        <h2>Data Collection</h2>
+        <p>
+          BlindBox does not collect personal data, analytics data, advertising identifiers,
+          or tracking information.
+        </p>
+        <p>
+          The app does not require an account and does not operate a backend server for storing
+          user data.
+        </p>
+      </section>
 
-<p>
-Your photos are processed locally on your device and are not uploaded to any server.
-</p>
+      <section>
+        <h2>User Feedback</h2>
+        <p>
+          If you contact the developer by email, any information you choose to include in that
+          email will be used only to respond to your message, investigate issues, or improve
+          the app.
+        </p>
+      </section>
 
-<h2>Data Collection</h2>
+      <section>
+        <h2>Third-Party Services</h2>
+        <p>
+          BlindBox does not use third-party advertising SDKs or analytics SDKs.
+        </p>
+      </section>
 
-<p>
-BlindBox does not collect personal data, analytics, or tracking information.
-</p>
+      <section>
+        <h2>Children’s Privacy</h2>
+        <p>
+          BlindBox does not knowingly collect personal information from children.
+        </p>
+      </section>
 
-<p>
-If you contact us through email, the information you provide will only be used to respond to your inquiry.
-</p>
+      <section>
+        <h2>Changes to This Policy</h2>
+        <p>
+          This Privacy Policy may be updated when the app changes. The latest version will
+          always be available on this page.
+        </p>
+      </section>
 
-<h2>Third-Party Services</h2>
+      <section>
+        <h2>Contact</h2>
+        <p>
+          If you have any questions about this Privacy Policy, contact:
+          <a href="mm2m123@icloud.com">mm2m123@icloud.com</a>
+        </p>
+      </section>
 
-<p>
-BlindBox does not use third-party advertising or analytics SDKs.
-</p>
+      <p class="updated">Last updated: May 27, 2026</p>
+    </article>
 
-<h2>Contact</h2>
-
-<p>
-If you have any questions about this Privacy Policy, please contact:
-</p>
-
-<p>
-<a href="mailto:mm2m123@icloud.com">mm2m123@icloud.com</a>
-</p>
-
+    <footer>
+      © 2026 BlindBox. Developed independently.
+    </footer>
+  </main>
 </body>
 </html>
