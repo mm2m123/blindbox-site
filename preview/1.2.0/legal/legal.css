@@ -1,0 +1,27 @@
+/* Local legal candidate: uses the existing BlindBox site's type and colour family. No external assets. */
+* { box-sizing: border-box; }
+html { color-scheme: light; scroll-padding-top: 1.5rem; }
+body { margin: 0; color: #26233a; background: #fbf8ff; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; font-size: 1rem; line-height: 1.8; overflow-wrap: anywhere; }
+.page { max-width: 52rem; margin: 0 auto; padding: 1.5rem clamp(1rem, 4vw, 2rem) 3rem; }
+a { color: #5f369e; text-underline-offset: .18em; }
+a:focus-visible { outline: 3px solid #5f369e; outline-offset: 3px; border-radius: .2rem; }
+.skip { position: absolute; top: -5rem; padding: .5rem; background: white; z-index: 1; }
+.skip:focus { top: .5rem; }
+.candidate { padding: .7rem 1rem; border: 1px solid #b89142; background: #fff6db; color: #57400d; border-radius: .7rem; }
+nav { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; margin: 1.2rem 0; }
+.brand { font-weight: 750; }
+.links { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+.links a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+[aria-current="page"] { font-weight: 750; }
+h1 { margin: 1.5rem 0 .5rem; line-height: 1.25; font-size: clamp(1.8rem, 6vw, 2.6rem); letter-spacing: -.025em; }
+h2 { margin: 0 0 .7rem; font-size: 1.3rem; line-height: 1.45; }
+.lead { color: #514c61; margin: 0 0 1rem; }
+.contents { display: block; padding: .5rem 1.25rem; border: 1px solid #ded5e9; border-radius: .9rem; }
+.contents ol { margin: .5rem 0; padding-left: 1.4rem; }
+.contents a { display: inline-block; padding: .12rem 0; }
+.content { padding: clamp(1rem, 4vw, 2rem); border: 1px solid #ded5e9; border-radius: 1.2rem; background: white; }
+section + section { margin-top: 2rem; }
+p { margin: .6rem 0; }
+footer { margin-top: 1.5rem; color: #514c61; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print { body { color: black; background: white; } .page, .content { padding: 0; border: 0; } .links, .contents, .skip { display: none; } .candidate { background: white; border: 2px solid black; } }
